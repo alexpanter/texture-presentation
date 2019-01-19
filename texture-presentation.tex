@@ -1,0 +1,191 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+
+\usepackage{alltt}
+
+\addtocounter{footnote}{1}
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\renewcommand{\floatpagefraction}{0.75}
+
+%Information to be included in the title page:
+\title{Using textures with OpenGL 3.3}
+\author{Alexander Christensen}
+\institute{Department of Computer Science \\ University of Copenhagen}
+\date{2019}
+
+%% Reference an equation, a figure, or a section
+
+%% \secref{label} - make a reference to a section
+\newcommand{\secref}[1]{Section~\ref{#1}}
+
+%% \eqref{reference} - make a reference to an equation
+%%\newcommand{\eqref}[1]{(\ref{#1})}
+
+%% \figref{reference} - make a reference to an figure
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+
+\newcommand{\basetop}[1]{\vtop{\vskip-1ex\hbox{#1}}}
+\newcommand{\source}[1]{\let\thefootnote\relax\footnotetext{\scriptsize\textcolor{kugray1}{Source: #1}}}
+
+%\bibliographystyle{longalpha}
+%\bibliography{refs}
+
+\input{mybeamermacros}
+
+\mode<presentation>
+{
+  \usetheme{Diku}
+  \beamertemplatenavigationsymbolsempty
+  \setbeamercovered{invisible}
+%  \setbeamercovered{transparent=15}
+}
+
+%% Kennys pseudocode environment
+
+\newenvironment{pseudocode}{
+  \begin{center}
+    \begin{minipage}[t]{0.8\columnwidth}
+      \footnotesize
+      \rule{\columnwidth}{1pt}
+    }{
+      \rule{\columnwidth}{1pt}
+    \end{minipage}
+  \end{center}
+}
+
+{
+\AtBeginSection[wef]
+{
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents[currentsection]{1}
+\end{frame}
+}
+}
+
+
+\begin{document}
+
+% Set background to front page
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{front}}
+{
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+}
+
+% Set background to rest of pages
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{background}}
+
+%
+%
+%
+\begin{frame}
+\frametitle{Overview}
+\tableofcontents
+%% This is a text in first frame. This is a text in first frame. This is a text in first frame.
+\end{frame}
+
+
+%
+%
+%
+\section{What is a texture?}
+
+\section{Texture Coordinates}
+
+\section{Setting Parameters}
+
+\section{Texture Mapping}
+
+\section{Finding a texture loader}
+
+
+\begin{frame}
+\frametitle{Texture Coordinates}
+We define a normalized coordinate system $T : \mathbb{R}^2$.
+A coordinate in a texture is called a \textit{texel}, and is a discrete value.
+To get a texel given real coordinates $(u,v)$ we can apply a filtering
+function $f(u,v)\ :\ \mathbb{R}^2 \mapsto \mathbb{N}^2$.
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{images/textureCoordinates.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Texture Coordinates - Filtering}
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{images/filtering.png}
+\caption{filtering}
+\end{figure}
+
+Define a function for interpolating between texture coordinates:
+\texttt{GL\_NEAREST :} choose nearest texel.\\
+\texttt{GL\_LINEAR\ \  :} linearly interpolate over neibhbouring texels.
+
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting parameters - Wrapping}
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting parameters - Clamping}
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting parameters - Mipmapping}
+\end{frame}
+
+\begin{frame}
+\frametitle{columns}
+\begin{columns}
+\column{0.5\textwidth}
+Some item on column 1
+
+\column{0.5\textwidth}
+Some item on column 2
+\end{columns}
+\end{frame}
+
+
+%
+%
+%
+\begin{frame}
+\frametitle{Summary}
+Text 1
+
+\vspace{5mm}
+Text 2
+
+\vspace{5mm}
+Text 3
+\end{frame}
+
+
+%
+%
+%
+\begin{frame}
+\frametitle{References}
+\nocite{*}
+\bibliography{refs}{}
+\bibliographystyle{alpha}
+\end{frame}
+
+
+
+\end{document}

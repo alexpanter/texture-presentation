@@ -1,4 +1,4 @@
-MAIN=shader-presentation
+MAIN=texture-presentation
 
 make: clean build
 
@@ -12,4 +12,4 @@ build:
 	@echo "done"
 
 clean:
-	@rm -f *.log shader-presentation.out *.snm *.toc *.aux *.nav
+	@rm -f *.log ${MAIN}.out *.snm *.toc *.aux *.nav

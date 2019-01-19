@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: shader-presentation.aux
+The top-level auxiliary file: texture-presentation.aux
 The style file: alpha.bst
 Database file #1: refs.bib
 Warning--to sort, need author or key in learnopengl
@@ -8,7 +8,7 @@ Warning--to sort, need author or key in Khronos
 Warning--to sort, need author or key in gpugems
 You've used 3 entries,
             2543 wiz_defined-function locations,
-            569 strings with 4760 characters,
+            570 strings with 4808 characters,
 and the built_in function-call counts, 684 in all, are:
 = -- 69
 > -- 3
