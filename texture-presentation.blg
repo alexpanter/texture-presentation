@@ -3,48 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: texture-presentation.aux
 The style file: alpha.bst
 Database file #1: refs.bib
-Warning--to sort, need author or key in learnopengl
-Warning--to sort, need author or key in Khronos
-Warning--to sort, need author or key in gpugems
-You've used 3 entries,
+Warning--to sort, need author or key in learnopengl/textures
+Warning--to sort, need author or key in learnopengl/framebuffers
+Warning--to sort, need author or key in Wikipedia/GameOfLife
+Warning--to sort, need author or key in Khronos/texture
+You've used 4 entries,
             2543 wiz_defined-function locations,
-            570 strings with 4808 characters,
-and the built_in function-call counts, 684 in all, are:
-= -- 69
-> -- 3
+            572 strings with 4856 characters,
+and the built_in function-call counts, 898 in all, are:
+= -- 92
+> -- 4
 < -- 0
 + -- 1
 - -- 0
-* -- 32
-:= -- 86
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 12
+* -- 42
+:= -- 108
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 16
 chr.to.int$ -- 3
-cite$ -- 9
-duplicate$ -- 30
-empty$ -- 82
+cite$ -- 12
+duplicate$ -- 40
+empty$ -- 109
 format.name$ -- 0
-if$ -- 158
-int.to.chr$ -- 1
+if$ -- 210
+int.to.chr$ -- 2
 int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 18
+newline$ -- 23
 num.names$ -- 0
-pop$ -- 36
+pop$ -- 48
 preamble$ -- 1
-purify$ -- 15
+purify$ -- 20
 quote$ -- 0
-skip$ -- 21
+skip$ -- 28
 stack$ -- 0
-substring$ -- 25
-swap$ -- 3
+substring$ -- 32
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 3
+type$ -- 32
+warning$ -- 4
 while$ -- 0
 width$ -- 5
-write$ -- 35
-(There were 3 warnings)
+write$ -- 46
+(There were 4 warnings)

@@ -1,20 +1,23 @@
-\begin{thebibliography}{Khr}
+\begin{thebibliography}{Wik}
 
-\bibitem[gpu]{gpugems}
-The geforce 6 series gpu architecture.
-\newblock
-  \url{https://developer.nvidia.com/gpugems/GPUGems2/gpugems2_chapter30.html}.
-\newblock Accessed: 2018-12-16.
+\bibitem[Khr]{Khronos/texture}
+Texture.
+\newblock \url{https://www.khronos.org/opengl/wiki/Texture}.
+\newblock Accessed: 2019-01-19.
 
-\bibitem[Khr]{Khronos}
-Rendering pipeling overview.
-\newblock
-  \url{https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview}.
-\newblock Accessed: 2018-12-16.
-
-\bibitem[lea]{learnopengl}
+\bibitem[leaa]{learnopengl/textures}
 Learnopengl.
 \newblock \url{https://learnopengl.com/Getting-started/Textures}.
+\newblock Accessed: 2019-01-19.
+
+\bibitem[leab]{learnopengl/framebuffers}
+Learnopengl.
+\newblock \url{https://learnopengl.com/Advanced-OpenGL/Framebuffers}.
+\newblock Accessed: 2019-01-19.
+
+\bibitem[Wik]{Wikipedia/GameOfLife}
+Conway's game of life.
+\newblock \url{https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life}.
 \newblock Accessed: 2019-01-19.
 
 \end{thebibliography}

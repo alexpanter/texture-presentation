@@ -100,15 +100,34 @@
 %
 %
 \section{What is a texture?}
+\begin{frame}
+\frametitle{What is a Texture?}
+A texture is an image that has been loaded to the GPU as a consecutive
+block of memory.\\
 
+OpenGL has no built-in functions for loading textures from the hard-disk.\\
+
+Assume a 2D texture with four color channels (RGBA):
+
+\begin{alltt}\footnotesize
+int width, height;\\
+GLubyte* ourTextureData = someFunctionToReadFromDisk("ourImage.png",\\
+\ensuremath{\qquad}\&width, \&height);\\
+
+GLuint ourTexture;\\
+glGenTextures(1, ourTexture);\\
+glBindTexture(GL\_TEXTURE\_2D, ourTexture);\\
+glTexImage2D(GL\_TEXTURE\_2D, 0, GL\_RGBA, width, height, 0, GL\_RGBA,\\
+\ensuremath{\qquad}GL\_UNSIGNED\_BYTE, ourTextureData);\\
+
+\end{alltt}
+\end{frame}
+
+
+%
+%
+%
 \section{Texture Coordinates}
-
-\section{Setting Parameters}
-
-\section{Texture Mapping}
-
-\section{Finding a texture loader}
-
 
 \begin{frame}
 \frametitle{Texture Coordinates}
@@ -122,42 +141,147 @@ function $f(u,v)\ :\ \mathbb{R}^2 \mapsto \mathbb{N}^2$.
 \end{frame}
 
 
+%
+%
+%
 \begin{frame}
 \frametitle{Texture Coordinates - Filtering}
 \begin{figure}
 \includegraphics[width=0.7\textwidth]{images/filtering.png}
-\caption{filtering}
 \end{figure}
-
 Define a function for interpolating between texture coordinates:
 \texttt{GL\_NEAREST :} choose nearest texel.\\
 \texttt{GL\_LINEAR\ \  :} linearly interpolate over neibhbouring texels.
-
-
-
 \end{frame}
 
+
+%
+%
+%
 \begin{frame}
-\frametitle{Setting parameters - Wrapping}
+\frametitle{Texture Coordinates - Clamping and Wrapping}
+\begin{figure}
+\includegraphics[width=0.7\textwidth]{images/filtering.png}
+\end{figure}
+Define a function for interpolating between texture coordinates:
+\texttt{GL\_NEAREST :} choose nearest texel.\\
+\texttt{GL\_LINEAR\ \  :} linearly interpolate over neibhbouring texels.
 \end{frame}
 
+
+%
+%
+%
+\section{Texture Mapping}
 \begin{frame}
-\frametitle{Setting parameters - Clamping}
+Given a triangle with texture coordinates $(u1,v1)$, $(u2,v2)$, and $(u3,v3)$,
+we wish to define a mapping, such that each vertex gets its own
+texture coordinate.
+\frametitle{Texture Mapping}
+\begin{figure}
+\includegraphics[width=0.9\textwidth]{images/textureMapping.png}
+\end{figure}
 \end{frame}
 
+
+%
+%
+%
 \begin{frame}
-\frametitle{Setting parameters - Mipmapping}
+\frametitle{Texture Mapping - Vertex Shader}
+The texture coordinate is buffered together with the position,
+as a per-vertex attribute:
+\begin{alltt}\footnotesize
+\#version 330 core\\
+
+layout (location = 0) in vec2 vertexPos;\\
+layout (location = 1) in vec2 texCoord;\\
+
+out vec2 interpolatedTexCoord;\\
+
+void main()\\
+\{\\
+\ensuremath{\qquad}gl\_Position = vec4(vertexPos, 0.0f, 1.0f);\\
+\ensuremath{\qquad}interpolatedTexcoord = texCoord; // will be interpolated by OpenGL\\
+\}
+\end{alltt}
 \end{frame}
 
-\begin{frame}
-\frametitle{columns}
-\begin{columns}
-\column{0.5\textwidth}
-Some item on column 1
 
-\column{0.5\textwidth}
-Some item on column 2
-\end{columns}
+%
+%
+%
+\begin{frame}
+Any input/output variable between vertex- and fragment shader is
+automatically interpolated by OpenGL.
+\frametitle{Texture Mapping - Fragment Shader}
+\begin{alltt}\footnotesize
+\#version 330 core\\
+
+uniform sampler2D textureSampler;\\
+in vec2 interpolatedTexCoord;\\
+out vec4 color;\\
+
+void main()\\
+\{\\
+\ensuremath{\qquad}color = texture(textureSampler, interpolatedTexcoord);\\
+\}
+\end{alltt}
+\end{frame}
+
+
+\section{Examples}
+%
+%
+%
+\begin{frame}
+\frametitle{Example with 1 texture}
+Draw a triangle with the grass texture that I have been showing so much
+(or something else!).
+\end{frame}
+
+
+%
+%
+%
+\begin{frame}
+\frametitle{Example with 2 textures}
+buffer the mouse position as a uniform such that moving the mouse
+will capture the x-position and divide the screen vertically
+between the two textures. There can be a smoothening transition
+which would look very cool.\\
+
+We could also perform this transition on the y-axis, but then a
+choice must be made: 2 textures or 4 textures!
+\end{frame}
+
+
+\section{Framebuffers}
+%
+%
+%
+\begin{frame}
+\frametitle{The bigger perspective - Framebuffers}
+Textures are images loaded to GPU memory.
+
+We are not restricted only to reading from textures,
+we an also write to them.
+
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{images/framebuffers.png}
+\end{figure}
+If we have $N-1$ textures, and let $N$ represent the application window,
+then for $1 \leq i \leq N - 1$ we can use the image data in texture $i$
+to run a shader which writes to texture $i+1$. The final image in
+texture $N$ is rendered to the screen.
+\end{frame}
+
+
+%
+%
+%
+\begin{frame}
+\frametitle{Framebuffer Example: Conway's Game of Life}
 \end{frame}
 
 
@@ -166,13 +290,13 @@ Some item on column 2
 %
 \begin{frame}
 \frametitle{Summary}
-Text 1
+We have seen the texture coordinate system.
 
 \vspace{5mm}
-Text 2
+We have seen methods for texture sampling.
 
 \vspace{5mm}
-Text 3
+Some code examples have shown how textures can be used in OpenGL 3.3.
 \end{frame}
 
 
