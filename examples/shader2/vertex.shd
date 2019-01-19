@@ -1,0 +1,20 @@
+#version 330 core
+
+layout (location = 0) in vec2 vertexPos;
+layout (location = 1) in vec3 vertexCol;
+
+uniform vec2 xytime;
+
+out vec4 vertexColor;
+
+void main()
+{
+    float xtime = (xytime.x + 1.0f) * 0.5f; // [-1,1] => clamp [0,1]
+    float ytime = (xytime.y + 1.0f) * 0.5f;
+    vec3 rgb = mix(vertexCol, 1.0f - vertexCol, xtime) * ytime;
+    vertexColor = vec4(rgb, 1.0f);
+
+    float xpos = vertexPos.x + xytime.x * 0.5f;
+    float ypos = vertexPos.y + xytime.y * 0.4f;
+    gl_Position = vec4(xpos, ypos, 0.0f, 1.0f);
+}

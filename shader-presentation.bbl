@@ -1,0 +1,20 @@
+\begin{thebibliography}{Khr}
+
+\bibitem[gpu]{gpugems}
+The geforce 6 series gpu architecture.
+\newblock
+  \url{https://developer.nvidia.com/gpugems/GPUGems2/gpugems2_chapter30.html}.
+\newblock Accessed: 2018-12-16.
+
+\bibitem[Khr]{Khronos}
+Rendering pipeling overview.
+\newblock
+  \url{https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview}.
+\newblock Accessed: 2018-12-16.
+
+\bibitem[lea]{learnopengl}
+Learnopengl.
+\newblock \url{http://learnopengl.com}.
+\newblock Accessed: 2018-12-16.
+
+\end{thebibliography}

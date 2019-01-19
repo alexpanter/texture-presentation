@@ -1,0 +1,95 @@
+%% -*- Mode: latex -*-
+
+%% Macros defined during a long time and used much
+% plus - a plus sign
+\newcommand{\plus}{+}
+
+% minus - a minus having the same width as a plus
+\newlength{\minuswidth}
+\settowidth{\minuswidth}{+}
+\newlength{\minusheight}
+\settoheight{\minusheight}{+}
+\newcommand{\minus}{\rule[0.5\minusheight]{\minuswidth}{0.5pt}}
+
+% The basis vector standard
+%\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\newcommand{\grad}{\operatorname{\nabla}}
+\newcommand{\curl}{\operatorname{\text{curl}}}
+\newcommand{\divergence}{\operatorname{\text{div}}}
+\newcommand{\vecop}{\operatorname{\text{vec}}}
+\newcommand{\diag}{\operatorname{\text{diag}}}
+\renewcommand{\Re}{\mathbb{R}}
+\newcommand{\Co}{\mathbb{C}}
+\newcommand{\In}{\mathbb{Z}}
+\newcommand{\sign}{\operatorname{sgn}}
+%\newcommand{\trace}{\operatorname{Tr}}
+\newcommand{\arctantwo}{\ensuremath{\arctan\!2}}
+%\newcommand{\mat}[1]{\ensuremath{\boldsymbol{#1} }}
+\newcommand{\I}{\mat{1}}
+\newcommand{\crossmat}[1]{\ensuremath{\boldsymbol{#1}^{\times} }}
+\newcommand{\jacobian}[1]{\ensuremath{\boldsymbol{\mathit{#1}} }}
+\newcommand{\set}[1]{\ensuremath{ \boldsymbol{#1} }}
+\newcommand{\func}[1]{{\bf{#1}}}
+\newcommand{\enorm}[1]{\ensuremath{\left\| #1 \right\|_{_2}}}
+%\newcommand{\norm}[1]{\ensuremath{\left\| #1 \right\|}}
+\newcommand{\bdet}[1]{\ensuremath{\left| #1 \right|}}
+\newcommand{\abs}[1]{\ensuremath{\left| #1 \right|}}
+\newcommand{\rtm}{$^{\textrm{®}}$}
+
+
+\newcommand{\kenny}[1]{ #1 }
+\newcommand{\henrik}[1]{ #1 }
+
+
+%% \maya - the maya signature
+\newcommand{\maya}{$ \texttt{Maya}^{\text{\texttrademark}} $}
+
+%% \fat{symbol} - make this symbol fat
+\newcommand{\fat}[1]{\mathit{\mathbf{#1}}}
+%% \newcommand{\fat}[1]{\hbox{\boldmath $ #1 $}}
+
+%% \vec{symbol} - Vector
+%% \renewcommand{\vec}[1]{\mathbf{#1}}
+\renewcommand{\vec}[1]{\fat{#1}}
+
+%% \mat{symbol} - Matrix
+%%\newcommand{\mat}[1]{\ensuremath{\boldsymbol{#1} }}
+\newcommand{\mat}[1]{\fat{#1}}
+
+%% \ezero,...,\ethree - the spin matrices
+\newcommand{\ezero}{\begin{bmatrix} 1 & 0 \\  0 &  1 \end{bmatrix}}
+\newcommand{\eone}{\begin{bmatrix} i & 0 \\  0 & -i \end{bmatrix}}
+\newcommand{\etwo}{\begin{bmatrix} 0 & 1 \\ -1 &  0 \end{bmatrix}}
+\newcommand{\ethree}{\begin{bmatrix} 0 & i \\  i &  0 \end{bmatrix}}
+
+%% \quat{symbol} - Quaternion
+%% \newcommand{\quat}[1]{\mathbf{#1}}
+\newcommand{\quat}[1]{\fat{#1}}
+
+%% \real{quaternion} - the real (scalar) part of a quaternion
+\newcommand{\real}{\operatorname{real}}
+
+%% \pure{quaternion} - the pure (vector) part of a quaternion
+\newcommand{\pure}{\operatorname{pure}}
+
+%% \sgn{symbol} - the sign of a symbol
+\newcommand{\sgn}{\operatorname{sgn}}
+
+%% \norm{symbol} - Norm of a vector/quaternion
+\newcommand{\norm}[1]{\parallel {#1} \parallel}
+
+%% \trace{matrix}
+\newcommand{\trace}[1]{\mathrm{trace}(#1)}
+
+% This is for code-snippets in the text.
+\usepackage{fancyvrb}   %% Try to comment this out if problems with pdflatex
+\newcommand{\code}[1]%
+%{ \VerbatimInput[frame=none,fontsize=\footnotesize,numbers=none,label=\texttt{#1}]{#1}  }
+{ \VerbatimInput[frame=single,fontsize=\footnotesize,numbers=left,label=\texttt{#1}]{#1}  }
+
+
+%\newcommand{\todo}[1]{ {\Bf Todo:} #1}
+\newcommand{\todo}[1]{ }
+
+%\newcommand{\longversion}[1]{ #1 }
+\newcommand{\longversion}[1]{ }

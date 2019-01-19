@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: shader-presentation.aux
+The style file: alpha.bst
+Database file #1: refs.bib
+Warning--to sort, need author or key in learnopengl
+Warning--to sort, need author or key in Khronos
+Warning--to sort, need author or key in gpugems
+You've used 3 entries,
+            2543 wiz_defined-function locations,
+            569 strings with 4760 characters,
+and the built_in function-call counts, 684 in all, are:
+= -- 69
+> -- 3
+< -- 0
++ -- 1
+- -- 0
+* -- 32
+:= -- 86
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 12
+chr.to.int$ -- 3
+cite$ -- 9
+duplicate$ -- 30
+empty$ -- 82
+format.name$ -- 0
+if$ -- 158
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 18
+num.names$ -- 0
+pop$ -- 36
+preamble$ -- 1
+purify$ -- 15
+quote$ -- 0
+skip$ -- 21
+stack$ -- 0
+substring$ -- 25
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 24
+warning$ -- 3
+while$ -- 0
+width$ -- 5
+write$ -- 35
+(There were 3 warnings)

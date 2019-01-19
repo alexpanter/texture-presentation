@@ -1,0 +1,9 @@
+#version 330 core
+
+in vec4 vertexColor; // smoothly interpolated value
+out vec4 color;
+
+void main()
+{
+    color = vertexColor;
+}
